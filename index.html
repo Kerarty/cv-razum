@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>КУ-2026 «Гейм-дизайнер» — Ярослав Кукар · резюме-тренажёр</title>
+<meta name="description" content="Интерактивное резюме гейм-дизайнера для Mind Games Software (razum.by): не список достижений, а учебный тренажёрный комплекс, который заказчик сам принимает в эксплуатацию.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23141a20'/%3E%3Ctext x='16' y='22' font-size='14' font-family='monospace' font-weight='bold' fill='%23ffcf33' text-anchor='middle'%3EЯК%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=PT+Mono&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="top-progress"><div class="top-progress__bar" id="topProgressBar"></div></div>
+
+<!-- ================= ПУЛЬТ ОПЕРАТОРА (HUD) ================= -->
+<aside class="hud" id="hud" aria-hidden="true">
+  <div class="hud__title">ПУЛЬТ ОПЕРАТОРА</div>
+  <div class="hud__row"><span>ИЗДЕЛИЕ</span><b>КУ-2026</b></div>
+  <div class="hud__row"><span>ОПЕРАТОР</span><b>Я. КУКАР</b></div>
+  <div class="hud__meter">
+    <span>УРОВЕНЬ ПОГРУЖЕНИЯ</span>
+    <div class="hud__bar"><div class="hud__bar-fill" id="hudProgress"></div></div>
+    <b id="hudPercent">0%</b>
+  </div>
+  <div class="hud__section" id="hudSection">ЗАСТАВА</div>
+  <ul class="hud__leds">
+    <li data-led="briefing"><i></i>Инструктаж</li>
+    <li data-led="modules"><i></i>Компетенции</li>
+    <li data-led="projects"><i></i>Наработки</li>
+    <li data-led="team"><i></i>Испытания</li>
+    <li data-led="docs"><i></i>Документация</li>
+    <li data-led="demo"><i></i>Погружение</li>
+    <li data-led="acceptance"><i></i>Приёмка</li>
+    <li data-led="act"><i></i>Эксплуатация</li>
+  </ul>
+  <div class="hud__foot">ГОСТ-2026 · СЕРТ. БГУИР</div>
+</aside>
+
+<!-- ================= ШИЛЬДИК ИЗДЕЛИЯ ================= -->
+<header class="hero" id="hero">
+  <div class="hero__grid" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <div class="hero__badge" id="heroBadge">
+      <div class="hero__badge-top">
+        <span class="stripe" aria-hidden="true"></span>
+        <span class="hero__code">КОМПЛЕКС УЧЕБНЫЙ ИНТЕРАКТИВНЫЙ</span>
+        <span class="stripe" aria-hidden="true"></span>
+      </div>
+      <div class="hero__badge-mid">
+        <div class="hero__photo-wrap" id="heroPhotoWrap" title="Кликните">
+          <img src="assets/photo.png" alt="Фото оператора: Ярослав Кукар" class="hero__photo" width="132" height="158">
+          <span class="hero__photo-stamp">ДОПУСК<br>ВЫДАН</span>
+        </div>
+        <div class="hero__nameplate">
+          <h1 class="hero__model">КУ-2026<span>«ГЕЙМ-ДИЗАЙНЕР»</span></h1>
+          <p class="hero__maker">Изготовитель: <b>КУКАР ЯРОСЛАВ</b></p>
+          <p class="hero__purpose">Назначение: концепция, сценарии и учебные механики для VR-тренажёров и интерактивных комплексов</p>
+        </div>
+      </div>
+      <div class="hero__badge-bottom">
+        <div class="hero__spec"><span>СЕРИЙНЫЙ №</span><b>ГД-2026-001</b></div>
+        <div class="hero__spec"><span>СОСТОЯНИЕ</span><b class="ok">ГОТОВ К ПРИЁМКЕ</b></div>
+        <div class="hero__spec"><span>НАПРЯЖЕНИЕ ИДЕЙ</span><b>380 В</b></div>
+      </div>
+    </div>
+
+    <div class="hero__controls">
+      <button class="btn btn--primary" id="startBtn" type="button">ПРОЙТИ ИНСТРУКТАЖ</button>
+      <label class="vr-toggle" title="Пасхалка для тех, кто в теме">
+        <input type="checkbox" id="vrToggle">
+        <span class="vr-toggle__track"><i></i></span>
+        <span class="vr-toggle__label">VR-РЕЖИМ</span>
+      </label>
+    </div>
+
+    <p class="hero__hint">Отклик на вакансию «Гейм-дизайнер в VR» · Mind Games Software (razum.by) — ниже изделие, которое это доказывает</p>
+    <a class="hero__pdf" href="assets/Yaroslav_Kukar_CV.pdf" target="_blank" rel="noopener">СЛУЧАЙ, КОГДА СРОЧНО: PDF-ВЕРСИЯ →</a>
+  </div>
+  <div class="hero__danger" aria-hidden="true"></div>
+</header>
+
+<main>
+
+<!-- ================= ИНСТРУКТАЖ ================= -->
+<section class="section" id="briefing" data-title="ИНСТРУКТАЖ">
+  <div class="section__head reveal">
+    <span class="section__index">ЭТАП 01</span>
+    <h2>Инструктаж по ТБ</h2>
+    <p class="section__sub">Техника безопасности проектирования обучающих систем. Обязателен для всех, кто дальше работает с этим кандидатом.</p>
+  </div>
+
+  <div class="briefing__grid">
+    <article class="tb-card reveal">
+      <div class="tb-card__icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><rect x="8" y="26" width="32" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M14 26v-8h20v8M24 18V6m0 0-5 5m5-5 5 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </div>
+      <h3>ПРЕЖДЕ ЧЕМ КОДИРОВАТЬ — СПРОЕКТИРУЙ</h3>
+      <p>Каждая механика начинается с документа: сценарий, правила, критерии приёмки. Код — это уже исполнительная часть.</p>
+    </article>
+    <article class="tb-card reveal">
+      <div class="tb-card__icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><path d="M24 6 42 40H6L24 6Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M24 18v10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="24" cy="34" r="1.8" fill="currentColor"/></svg>
+      </div>
+      <h3>ЛИШНЯЯ СЛОЖНОСТЬ — ТРАВМООПАСНА</h3>
+      <p>Обучаемого ведут по нарастающей: от простого действия к автономной работе. Скачок сложности — травма мотивации.</p>
+    </article>
+    <article class="tb-card reveal">
+      <div class="tb-card__icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="17" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M24 12c6 4 6 8 0 12s-6 8 0 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </div>
+      <h3>АТТРАЦИОН БЕЗ РЕЗУЛЬТАТА — ПЕРЕРАСХОД БЮДЖЕТА</h3>
+      <p>«Вау-эффект» обязан закрепляться навыком. Впечатление, которое не измеряется усвоением, — это просто дорогое светомузыка.</p>
+    </article>
+  </div>
+
+  <div class="briefing__pitch reveal">
+    <p class="briefing__pitch-lead">Я — геймдизайнер с профильным техническим образованием (БГУИР, «Информационные системы и технологии в игровой индустрии», 2023–2027). Делаю не «игры ради игр», а интерактивные системы, в которых механика учит: <b>производственную симуляцию завода</b> на Unity, головоломку с <b>автоматическим контролем качества уровней</b>, <b>playable-рекламу</b>, которая успевает обучить игре за 30 секунд.</p>
+    <p>Ваш профиль — тренажёры и учебные комплексы для заводов и ведомств. Это те же playables: короткий сценарий, честный «вау-эффект» и <b>измеримый результат</b>. Мне не нужно объяснять, чем гейм-дизайн отличается от «придумывания стрелялок», — я уже проектирую обучение.</p>
+  </div>
+</section>
+
+<!-- ================= МОДУЛИ КОМПЕТЕНЦИЙ ================= -->
+<section class="section section--alt" id="modules" data-title="КОМПЕТЕНЦИИ">
+  <div class="section__head reveal">
+    <span class="section__index">ЭТАП 02</span>
+    <h2>Модули компетенций</h2>
+    <p class="section__sub">Четыре уровня погружения — как в центре охраны труда «Минскстроя»: каждый следующий включает предыдущий. Кликните по модулю, чтобы открыть состав.</p>
+  </div>
+  <div class="modules" id="modulesList"><!-- рендер из data.js --></div>
+</section>
+
+<!-- ================= НАРАБОТКИ СЦЕНАРИЕВ ================= -->
+<section class="section" id="projects" data-title="НАРАБОТКИ">
+  <div class="section__head reveal">
+    <span class="section__index">ЭТАП 03</span>
+    <h2>Наработки сценариев</h2>
+    <p class="section__sub">Готовые изделия и документы. Каждый проект разложен по формуле тренажёра: задача → решение → результат, который видит заказчик.</p>
+  </div>
+  <div class="projects" id="projectsList"><!-- рендер из data.js --></div>
+</section>
+
+<!-- ================= СОВМЕСТНЫЕ ИСПЫТАНИЯ ================= -->
+<section class="section section--alt" id="team" data-title="ИСПЫТАНИЯ">
+  <div class="section__head reveal">
+    <span class="section__index">ЭТАП 04</span>
+    <h2>Совместные испытания</h2>
+    <p class="section__sub">Требование вакансии — «минимум один групповой проект». Отчитываюсь изделием: плейтест-кампания варгейма «Королевства Эридора».</p>
+  </div>
+  <div class="team__wrap reveal">
+    <div class="team__log">
+      <div class="team__log-head">ЖУРНАЛ ИСПЫТАНИЙ · ИЗДЕЛИЕ «ЭРИДОР»</div>
+      <ol class="team__steps">
+        <li><b>Формирование групп.</b> 15+ сессий с живыми игроками: от новичков до «предателей стабильности» — тех, кто специально ломает правила.</li>
+        <li><b>Модерация и протокол.</b> Каждая сессия по сценарию: вводный брифинг → партия → разбор. Обратная связь фиксируется протоколом, а не «по ощущениям».</li>
+        <li><b>Итерации баланса.</b> Характеристики 4 фракций правились по данным сессий — циклом, как live-ops после релиза события: гипотеза → правка → повторные испытания.</li>
+        <li><b>Результат.</b> Матч держится между любыми парами фракций, а правила читаются без автора. Изделие принято игроками.</li>
+      </ol>
+    </div>
+    <aside class="team__note">
+      <h3>Параллельные работы</h3>
+      <p>Командные проекты в БГУИР по специальности «ИТ в игровой индустрии»: распределение ролей, совместная приёмка результатов, защита перед комиссией.</p>
+      <p class="team__punch">Вывод для «Разума»: тренажёр принимают операторы и заказчик — сценарий обязан выдерживать живые сессии. Этот цикл у меня уже отработан.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ================= ПРОЕКТНАЯ ДОКУМЕНТАЦИЯ ================= -->
+<section class="section" id="docs" data-title="ДОКУМЕНТАЦИЯ">
+  <div class="section__head reveal">
+    <span class="section__index">ЭТАП 05</span>
+    <h2>Проектная документация</h2>
+    <p class="section__sub">Требуется «навык работы с графикой». Листы ниже — авторские эскизы: изометрия тренажёрной кабины, схема уровней погружения, карта сценария. Листайте ленту, кликните по технике — она отвечает.</p>
+  </div>
+  <div class="docs__rail reveal" id="docsRail">
+    <figure class="doc-sheet">
+      <figcaption class="doc-sheet__cap"><b>Лист 1</b> · Кабина оператора. Общий вид</figcaption>
+      <div class="doc-sheet__paper">
+        <svg viewBox="0 0 560 340" class="draw-svg" role="img" aria-label="Эскиз тренажёрной кабины оператора">
+          <rect x="16" y="16" width="528" height="308" fill="none" class="d-frame"/>
+          <rect x="120" y="70" width="260" height="200" rx="10" fill="none" class="d-line"/>
+          <path d="M160 270v-60c0-18 14-32 32-32h116c18 0 32 14 32 32v60" fill="none" class="d-accent"/>
+          <rect x="196" y="118" width="108" height="40" rx="18" fill="none" class="d-accent"/>
+          <path d="M210 138h26m44 0h26" stroke-linecap="round" class="d-accent"/>
+          <circle cx="250" cy="206" r="10" fill="none" class="d-line"/><circle cx="290" cy="206" r="10" fill="none" class="d-line"/>
+          <path d="M380 96h96M380 96v96M476 96v96" fill="none" class="d-dim"/>
+          <path d="M380 120h96m0 0-8-4m8 4-8 4M380 168h-14" fill="none" class="d-dim"/>
+          <text x="398" y="112" class="d-text">2600</text>
+          <text x="486" y="136" class="d-text">4 уровня</text>
+          <text x="398" y="188" class="d-text">погружения</text>
+          <rect x="60" y="100" width="52" height="120" rx="6" fill="none" class="d-line"/>
+          <path d="M70 120h32M70 140h32M70 160h32M70 180h32" class="d-dim"/>
+          <text x="48" y="244" class="d-text">пульт</text>
+          <g id="tractorDraw" class="tractor" role="button" tabindex="0" aria-label="Трактор BELARUS — кликните">
+            <rect x="392" y="236" width="66" height="26" rx="4" fill="none" class="d-accent tractor__body"/>
+            <circle cx="404" cy="268" r="12" fill="none" class="d-accent"/><circle cx="448" cy="268" r="8" fill="none" class="d-accent"/>
+            <path d="M424 236v-14h16" fill="none" class="d-accent"/>
+            <text x="378" y="298" class="d-text tractor__label">BELARUS</text>
+          </g>
+          <text x="24" y="316" class="d-text">Формат А1 · Эскиз авторский · Масштаб идеи 1:1</text>
+        </svg>
+        <span class="doc-stamp doc-stamp--sketch">ЭСКИЗ</span>
+      </div>
+    </figure>
+    <figure class="doc-sheet">
+      <figcaption class="doc-sheet__cap"><b>Лист 2</b> · Схема уровней погружения</figcaption>
+      <div class="doc-sheet__paper">
+        <svg viewBox="0 0 560 340" class="draw-svg" role="img" aria-label="Схема четырёх уровней погружения">
+          <rect x="16" y="16" width="528" height="308" fill="none" class="d-frame"/>
+          <rect x="60" y="236" width="440" height="56" rx="8" fill="none" class="d-line"/>
+          <rect x="92" y="172" width="376" height="56" rx="8" fill="none" class="d-line"/>
+          <rect x="124" y="108" width="312" height="56" rx="8" fill="none" class="d-line"/>
+          <rect x="156" y="44" width="248" height="56" rx="8" fill="none" class="d-accent"/>
+          <text x="76" y="270" class="d-text">1 · ТЕОРИЯ — правила и критерии</text>
+          <text x="108" y="206" class="d-text">2 · ТРЕНАЖЁР — отработка действий</text>
+          <text x="140" y="142" class="d-text">3 · СЦЕНАРИЙ — нештатные ситуации</text>
+          <text x="172" y="78" class="d-accent-text">4 · ГРУППОВАЯ ИНСПЕКЦИЯ · VR</text>
+          <path d="M280 300V60" fill="none" class="d-dim"/>
+          <path d="M280 60v240M272 68l8-8 8 8M272 292l8 8 8-8" fill="none" class="d-dim"/>
+          <text x="290" y="96" class="d-text">нарастающая</text>
+          <text x="290" y="112" class="d-text">сложность</text>
+        </svg>
+        <span class="doc-stamp doc-stamp--sketch">СХЕМА</span>
+      </div>
+    </figure>
+    <figure class="doc-sheet">
+      <figcaption class="doc-sheet__cap"><b>Лист 3</b> · Карта сценария тренировки</figcaption>
+      <div class="doc-sheet__paper">
+        <svg viewBox="0 0 560 340" class="draw-svg" role="img" aria-label="Блок-схема сценария обучения">
+          <rect x="16" y="16" width="528" height="308" fill="none" class="d-frame"/>
+          <rect x="40" y="52" width="140" height="44" rx="6" fill="none" class="d-line"/>
+          <text x="56" y="79" class="d-text">ИНСТРУКТАЖ</text>
+          <rect x="228" y="52" width="140" height="44" rx="6" fill="none" class="d-line"/>
+          <text x="252" y="79" class="d-text">ТРЕНИРОВКА</text>
+          <path d="M180 74h48m-8-5 8 5-8 5" fill="none" class="d-dim"/>
+          <path d="M298 96v34m0 0h-56m0 0 0 34m0-34-8 8m8-8 8 8" fill="none" class="d-dim"/>
+          <path d="M180 164l48 26-48 26-48-26z" fill="none" class="d-accent"/>
+          <text x="150" y="168" class="d-accent-text">Зачёт?</text>
+          <path d="M228 190h130m0 0v-94h-44m0 0-8 8m8-8-8-8" fill="none" class="d-dim"/>
+          <rect x="358" y="164" width="150" height="50" rx="6" fill="none" class="d-line"/>
+          <text x="372" y="186" class="d-text">НЕШТАТНАЯ</text>
+          <text x="372" y="202" class="d-text">СИТУАЦИЯ · VR</text>
+          <path d="M180 216v38m0 0h260m0 0v-40m0 0-8 8m8-8-8-8" fill="none" class="d-dim"/>
+          <rect x="150" y="254" width="200" height="44" rx="6" fill="none" class="d-accent"/>
+          <text x="182" y="281" class="d-accent-text">АТТЕСТАЦИЯ</text>
+          <text x="24" y="316" class="d-text">Контур сценария · Правило: ошибка обучаемого всегда обратима</text>
+        </svg>
+        <span class="doc-stamp doc-stamp--sketch">БЛОК-СХЕМА</span>
+      </div>
+    </figure>
+  </div>
+  <div class="docs__pager reveal">
+    <button class="pager__btn" id="docPrev" type="button" aria-label="Предыдущий лист">←</button>
+    <span class="pager__state" id="docState">ЛИСТ 1 / 3</span>
+    <button class="pager__btn" id="docNext" type="button" aria-label="Следующий лист">→</button>
+  </div>
+</section>
+
+<!-- ================= ПРОБНОЕ ПОГУЖЕНИЕ ================= -->
+<section class="section section--alt" id="demo" data-title="ПОГУЖЕНИЕ">
+  <div class="section__head reveal">
+    <span class="section__index">ЭТАП 06</span>
+    <h2>Пробное погружение</h2>
+    <p class="section__sub">Мини-тренажёр «Проверка знаний по охране труда геймдизайна». 4 вопроса, 1 минута. Принимает не человек — изделие само показывает, как устроена оценка результата.</p>
+  </div>
+  <div class="quiz reveal" id="quiz"><!-- рендер из data.js --></div>
+</section>
+
+<!-- ================= ПРИЁМОЧНЫЕ ИСПЫТАНИЯ ================= -->
+<section class="section" id="acceptance" data-title="ПРИЁМКА">
+  <div class="section__head reveal">
+    <span class="section__index">ЭТАП 07</span>
+    <h2>Приёмочные испытания</h2>
+    <p class="section__sub">Требования вакансии «Гейм-дизайнер в VR» против изделия. Каждый пункт подтверждается фактами из разделов выше. Штампы падают по мере прохождения страницы.</p>
+  </div>
+  <div class="acceptance" id="acceptanceList"><!-- рендер из data.js --></div>
+</section>
+
+</main>
+
+<!-- ================= АКТ ВВОДА В ЭКСПЛУАТАЦИЮ ================= -->
+<footer class="act" id="act" data-title="ЭКСПЛУАТАЦИЯ">
+  <div class="act__inner reveal">
+    <div class="act__head">
+      <span class="act__doc-code">ДОК. ГД-2026-001-АКТ</span>
+      <h2>АКТ ВВОДА В ЭКСПЛУАТАЦИЮ</h2>
+    </div>
+    <p class="act__body">Настоящим подтверждается: изделие <b>КУ-2026 «Гейм-дизайнер»</b> (Кукар Ярослав) прошло приёмочные испытания и <b>рекомендуется к вводу в штат</b> Mind Games Software. Гарантийные обязательства: энтузиазм — бессрочно, кофе — сам свой.</p>
+    <div class="act__contacts">
+      <a href="tel:+375447838489" class="act__contact"><span>ТЕЛЕФОН</span><b>+375 44 783-84-89</b></a>
+      <a href="mailto:kukar.yar@gmail.com" class="act__contact"><span>EMAIL</span><b>kukar.yar@gmail.com</b></a>
+      <a href="https://github.com/Kerarty" target="_blank" rel="noopener" class="act__contact"><span>РЕПОЗИТОРИИ</span><b>github.com/Kerarty</b></a>
+    </div>
+    <div class="act__actions">
+      <a class="btn btn--primary" href="mailto:mail@razum.by?subject=%D0%A5%D0%BE%D1%87%D1%83%20%D0%BA%20%D0%B2%D0%B0%D0%BC%20%D0%B3%D0%B5%D0%B9%D0%BC-%D0%B4%D0%B8%D0%B7%D0%BE%D0%BC!&body=%D0%9F%D1%80%D0%B8%D0%BE%D0%B1%D1%80%D0%B5%D0%BB%20%D0%B8%D0%B7%D0%B4%D0%B5%D0%BB%D0%B8%D0%B5%20%D0%9A%D0%A3-2026%20%C2%AB%D0%93%D0%B5%D0%B9%D0%BC-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%D0%B5%D1%80%C2%BB.%20%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B8%D1%82%D1%8C%20%D0%B4%D0%B0%D1%82%D1%83%20%D0%B2%D0%B2%D0%BE%D0%B4%D0%B0%20%D0%B2%20%D1%8D%D0%BA%D1%81%D0%BF%D0%BB%D1%83%D0%B0%D1%82%D0%B0%D1%86%D0%B8%D1%8E.%20%D0%A0%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5-%D1%82%D1%80%D0%B5%D0%BD%D0%B0%D0%B6%D1%91%D1%80:%20https%3A%2F%2Fkerarty.github.io%2Fcv-razum%2F">ХОЧУ К ВАМ ГЕЙМ-ДИЗОМ!</a>
+      <a class="btn" href="assets/Yaroslav_Kukar_CV.pdf" target="_blank" rel="noopener">СКАЧАТЬ PDF-ВЕРСИЮ</a>
+    </div>
+    <div class="act__stamp-row">
+      <div class="act__stamp act__stamp--accepted">ПРИНЯТО · ГЭК ГД</div>
+      <div class="act__sign">
+        <span class="act__sign-line"></span>
+        <span class="act__sign-name">Кукар Я.В.</span>
+        <span class="act__sign-note">М.П. — место печати (печать в пути)</span>
+      </div>
+    </div>
+  </div>
+  <div class="act__foot">
+    <span>Разработано и произведено Ярославом Кукаром · 2026</span>
+    <span>Изделие № ГД-2026-001 · В станице спрятаны пасхалки: VR-тумблер, трактор и код ↑↑↓↓←→←→BA</span>
+  </div>
+</footer>
+
+<div class="alarm" id="alarm" aria-hidden="true">
+  <div class="alarm__inner">
+    <div class="alarm__stripes" aria-hidden="true"></div>
+    <p class="alarm__title">ВНИМАНИЕ! АВАРИЙНАЯ ЭВАКУАЦИЯ</p>
+    <p class="alarm__sub">Покиньте страницу организованно — через раздел «Эксплуатация» (контакты)</p>
+    <div class="alarm__stripes" aria-hidden="true"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="tractor-ride" id="tractorRide" aria-hidden="true"></div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
